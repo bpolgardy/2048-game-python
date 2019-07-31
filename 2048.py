@@ -36,7 +36,7 @@ def zero_search(table):
 
 def status_check(table):
     copy_table = [sorted(row, reverse=True) for row in table]
-    WINNING_CONDITION = 32
+    WINNING_CONDITION = 2048
     if max(max(copy_table)) < WINNING_CONDITION:
         if zero_search(table) != []:
             status = "New round"
@@ -121,8 +121,10 @@ def slide_left(table):
 def transpose(table):
     return [list(row) for row in zip(*table)]
 
+
 def reverse_rows(table):
     return [list(reversed(row)) for row in table]
+
 
 def slide_up(table):
     return transpose(slide_left(table))
