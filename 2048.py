@@ -127,7 +127,7 @@ def reverse_rows(table):
 
 
 def slide_up(table):
-    return transpose(slide_left(table))
+    return transpose(slide_left(transpose(table)))
 
 
 def slide_down(table):
